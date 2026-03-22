@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <table>
+            <tr>
+                <td>
+                    <h1>Стебельська Катерина</h1>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <br>
+    <section>
+        <h2>Особиста інформація</h2>
+        <hr>
+        <table>
+            <tr>
+                <td>
+                    <h3>ПІБ</h3>
+                </td>
+                <td>
+                    <p>Стебельська Катерина Миколаївна</p>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <h3>Email</h3>
+                </td>
+                <td>
+                    <p>kotletiandkobachki@gmail.com</p>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <h3>Номер телефону</h3>
+                </td>
+                <td>
+                    <p>+380637726498</p>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <h3>Місто проживання</h3>
+                </td>
+                <td>
+                    <p>Львів</p>
+                </td>
+            </tr>
+                 <tr>
+                <td>
+                    <h3>Стать</h3>
+                </td>
+                <td>
+                    <p>Жіноча</p>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h2>Про мене</h2>
+        <hr>
+        <p>Студентка спеціальності «Кібербезпека», яка захоплюється програмуванням та графічним дизайном. Постійно працюю над поглибленням знань у сфері інформаційних технологій і вдосконаленням професійних навичок. Мені подобається відкривати щось нове, швидко опановую нову інформацію. Легко налагоджую взаємодію з людьми та завжди шукаю індивідуальний підхід до кожного у  роботі. У процесі виконання завдань прагну до всебічного аналізу, орієнтуючись на досягнення високої якості результату. 
+        </p>
+    </section>
+    <br>
+    <section>
+        <h2>Освіта</h2>
+        <hr>
+        <ul>
+             <li>Червоноградська загальноосвітня школа І-ІІІ ступенів №1 (випуск 2022)</li>
+             <li>Ліцей імені Тараса Городецького (випуск 2024)</li>
+             <li>Національний університет "Львівська політехніка"</li>
+        </ul>
+    </section>
+
+    <br>
+    <section>
+        <h2>Навички</h2>
+        <hr>
+        <ul>
+            <li>Мови програмування: Python, C#</li>
+            <li>Веб-розробка: HTML, CSS</li>
+            <li>Дизайн: Canva</li>
+        </ul>
+    </section>
+    <br>
+    <section>
+        <h2>Мови</h2>
+        <hr>
+        <ul>
+            <li>Англійська мова (B1-B2)</li>
+            <li>Українська</li>
+        </ul>
+    </section>
+    <br>
+    <section>
+        <h2>Проєкти</h2>
+        <hr>
+        <ul>
+            <p>"Готовність+" - командна робота над розробкою навчальної платформи для легкого вивчення основ базової військової підготовки. Платформа складалась з інтерактивних карт, тестів, сценаріїв для відтренування навичок та шкали прогресу. В команді працювали з Trello та Git.</p>
+        </ul>
+    </section>
+<section>
+    <h2>Коментарі</h2>
+    <div id="comments"></div>
+</section>
+
+<div id="overlay" class="modal-overlay hidden"></div>
+<div id="modal" class="hidden">
+    <form action="https://formspree.io/f/mdawvezz" method="POST">
+        <h3>Зворотній зв'язок</h3>
+        <input type="text" name="name" placeholder="Ім'я" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+
+        <textarea name="message" placeholder="Повідомлення"></textarea>
+
+       <div class="buttons-container">
+            <button type="submit">Відправити</button>
+            <button type="button" onclick="closeModal()">Закрити</button>
+        </div>
+    </form>
+</div>
+<button id="themeToggle" style="position: fixed; top: 10px; right: 10px; z-index: 1001;">Змінити тему</button>
+
+<footer id="footer"></footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

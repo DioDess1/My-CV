@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+/* змінні */
+:root {
+  --bg:        #000000 ;
+  --surface:   #000000;
+  --ink:       #FFFFFF;
+  --muted:     #AAAAAA;
+  --accent:    #FF6A00;
+  --accent-lt: #2A1A0A;
+  --rule:      #333333;
+  --gap:       2rem;
+}
+
+/* бааза та скидання стилів*/
+*, *::before, *::after { box-sizing: border-box; margin: 500; padding: 1000; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/*wrapper*/
+body > * {
+  max-width: 780px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* header*/
+header {
+  padding: 3rem 3rem 2.5rem;
+  background: var(--surface) !important;
+  border-radius: 4px 4px 0 0;
+  border-top: 5px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--accent-lt);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+header table { border: none; width: auto; }
+header table td { padding: 0; border: none; }
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+/*section*/
+section {
+  background: var(--surface) !important;
+  padding: 2rem ;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  animation: fadeUp 0.5s ease both;
+  transition: background 0.3s ease;
+}
+
+section:last-of-type {
+  border-radius: 0 0 4px 4px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 3rem;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/*затримка*/
+section:nth-of-type(1) { animation-delay: 0.05s; }
+section:nth-of-type(2) { animation-delay: 0.10s; }
+section:nth-of-type(3) { animation-delay: 0.15s; }
+section:nth-of-type(4) { animation-delay: 0.20s; }
+section:nth-of-type(5) { animation-delay: 0.25s; }
+section:nth-of-type(6) { animation-delay: 0.30s; }
+
+br { display: none; }
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin-bottom: 1.4rem;
+}
+
+/*таблички*/
+section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+section table tr {
+  border-bottom: 1px solid var(--rule);
+}
+
+section table tr:last-child {
+  border-bottom: none;
+}
+
+section table td {
+  padding: 0.65rem 0;
+  vertical-align: middle;
+  border: none;
+}
+
+section table td:first-child {
+  width: 40%;
+}
+
+section table h3 {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+section table p {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+
+section > p {
+  font-size: 0.97rem;
+  color: #DDDDDD;
+  max-width: 60ch;
+  line-height: 1.85;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+section ul li {
+  font-size: 0.95rem;
+  padding-left: 1.2rem;
+  position: relative;
+  color: var(--ink);
+}
+
+section ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* проєкти */
+section ul p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #DDDDDD;
+  padding: 1rem 1.2rem;
+  background: var(--accent-lt);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+
+@media (max-width: 600px) {
+  header, section { padding: 1.5rem; }
+
+  section table td:first-child { width: 45%; }
+
+  header h1 { font-size: 1.8rem; }
+}
+
+.hidden {
+  display: none !important;
+}
+
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1A1A1A; 
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--accent); 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  z-index: 1000;
+  width: 90%;
+  max-width: 450px;
+  color: var(--ink);
+  animation: fadeUp 0.4s ease-out;
+}
+
+body.dark {
+  --bg: #ffffff !important;
+  --surface: #f0f0f0 !important;
+  --ink: #000000 !important;
+  --rule: #dddddd !important;
+}
+
+#themeToggle {
+    position: fixed; 
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    border-radius: 50px; 
+    box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#themeToggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+}
+
+#modal h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center; 
+}
+
+#modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2 rem;
+}
+
+#modal input, #modal textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  padding: 0.8rem 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+#modal input:focus, 
+#modal textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+/* Кнопки */
+#modal .buttons-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#modal button[type="submit"] {
+  flex: 2;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+#modal button[type="button"] {
+  flex: 1;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+#modal button:hover {
+  opacity: 0.8;
+}
+
+#modal button[type="button"]:hover {
+  color: var(--ink);
+  border-color: var(--muted);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
